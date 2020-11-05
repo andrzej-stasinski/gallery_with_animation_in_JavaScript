@@ -1,0 +1,83 @@
+* {
+    margin: 0;padding: 0;
+    font-family: 'Lato', sans-serif;
+}
+#kontener {
+    border:1px solid gray;
+    width: 800px;
+    margin: 0 auto;
+}
+#tytul {
+    width:508px;
+    margin: 0 auto;
+}
+#ramkaObrazek {
+    margin: 10 auto;
+    width:508px;
+    height: 400px;
+    box-shadow: inset 0 0 1em gray, 0 0 1em black;
+}
+#ramkaObrazek img {
+    max-width: 508px;
+    max-height: 400px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*
+    transition:opacity 2.0s linear 0s;
+    opacity:1;
+    */
+}
+#numberFotki {
+    margin: 0 auto;
+    width: 508px;
+    text-align: center;
+}
+#galeria {
+    border:1px solid black;
+    margin: 10px auto;
+    width:502px;
+    height: 100px;
+ }
+/* left, right - 2 rozwiązania umieszczenia img */
+#left {
+    width:50px;
+    float:left;
+    height: 100px;
+    background-color: #eee;
+    cursor: pointer;
+    display: block;
+}
+#left img {
+    position: relative;
+    top:25%;
+}
+#right {
+    width:50px;
+    float:left;
+    background-color: #eee;
+    cursor: pointer;
+    height: 100px;
+    height: 75px;
+    padding-top: 25px;
+}
+#blok {
+    width:400px;
+    height:100px;
+    float:left;
+    /*
+    overflow: hidden;
+    */
+    position: relative;
+}
+#fotki {
+    height:100px;
+    width:600px;
+    position: absolute;
+ }
+#fotki img {
+    width:100px;
+    height:100px;
+    float:left;
+    cursor: pointer;
+}

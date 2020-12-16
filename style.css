@@ -23,10 +23,6 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /*
-    transition:opacity 2.0s linear 0s;
-    opacity:1;
-    */
 }
 #numberFotki {
     margin: 0 auto;
@@ -65,9 +61,6 @@
     width:400px;
     height:100px;
     float:left;
-    /*
-    overflow: hidden;
-    */
     position: relative;
 }
 #fotki {

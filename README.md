@@ -1,7 +1,8 @@
 ## Gallery in JavaScript
 
-#### Features of app
-* gallery in JavaScript
+#### Features of the app
+* gallery in JavaScript, (not jquery)
 * animation of sliding photos to choose from
-* the use of asynchronicity prevents the selection of a photo during the animation
+* the selected photo shown with the animation getting brighter
 * picture show with fadeIn animation
+* use of asynchronicity prevents the chosen of a photo during the animation

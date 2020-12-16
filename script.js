@@ -43,17 +43,12 @@ function insertArrows() {
     
     // Click - przyciski przesunięcia fotek - mini galerii
     // ===================================================
-    
-    console.log("fotki.clientWidth = " + fotki.clientWidth);
-    console.log(fotki.offsetLeft);
-    console.log(fotki.clientWidth+fotki.offsetLeft);
 
     // wyrównanie arytmetyczne dla animacji
     // ------------------------------------
     function wyrownanieArytmetyczne() {
         var podniesZmiany = Math.round(fotki.offsetLeft * 0.1) * 10;
-        fotki.style.left = podniesZmiany;
-        //console.log("wyrownanieArytmetyczne - fotki.offsetLeft = " + fotki.offsetLeft);        
+        fotki.style.left = podniesZmiany;      
     }
 
     // animacja przesuwu fotek
@@ -62,19 +57,16 @@ function insertArrows() {
         return new Promise(function(resolve, reject) {
 
         function animacja(strona) {
-            console.log("A N I M A C J A");
+            // console.log("A N I M A C J A");
                 
-            console.log("animacja count = " + count);
             count+=10;
             if(count <= 100) {
                 if(strona == "left") {
                     fotki.style.left = fotki.offsetLeft -10 + 'px';
-                    console.log("offsetLeft = " + fotki.offsetLeft);
                     wyrownanieArytmetyczne();
                     }
                 if(strona == "right") {
                     fotki.style.left = fotki.offsetLeft +10 + 'px';
-                    console.log("offsetLeft = " + fotki.offsetLeft);  
                     wyrownanieArytmetyczne();
                     }
                 setTimeout(function() {
@@ -96,13 +88,10 @@ function insertArrows() {
     // Click - left
     // ------------------------------------
     function leftClick() {
-        console.log('clickLeft =================');
-        
+
         var warLeft = 500;
-        if(numberImages > 4 && ((fotki.clientWidth+fotki.offsetLeft)) >= warLeft) {
-            
+        if(numberImages > 4 && ((fotki.clientWidth+fotki.offsetLeft)) >= warLeft) {           
             // blokada click Left
-            console.log(this);
             this.onclick = null;
             
             arrowLeft.src = "img/arrows/arrowLeft.jpg";
@@ -116,18 +105,9 @@ function insertArrows() {
             });
             
             p1.then(function(v){
-                console.log(v);
             }).then(function(){
                 return p2;
             }).then(function(v){
-                console.log(v);
-                
-                console.log("---- Dane po przesunięciu -----");    
-                console.log("fotki.clientWidth                  = " + fotki.clientWidth);
-                console.log("fotki.offsetLeft                   = " + fotki.offsetLeft);
-                console.log("fotki.clientWidth+fotki.offsetLeft = " + (fotki.clientWidth+fotki.offsetLeft));
-
-                console.log("---- Sprawdzam warunki LEWO -----");
                 if((fotki.clientWidth+fotki.offsetLeft) < warLeft) {
                     arrowLeft.src = "img/arrows/arrowNo.jpg";
                     arrowRight.src = "img/arrows/arrowRight.jpg";
@@ -146,10 +126,8 @@ function insertArrows() {
         console.log('clickRight =================');
 
         var warRight = 0;
-        if(numberImages > 4 && (fotki.offsetLeft < warRight)) {
-            
+        if(numberImages > 4 && (fotki.offsetLeft < warRight)) {         
             // blokada click Right
-            console.log(this);
             this.onclick = null;
             
             arrowRight.src = "img/arrows/arrowRight.jpg";
@@ -163,18 +141,11 @@ function insertArrows() {
             });
             
             p1.then(function(v){
-                console.log(v);
+
             }).then(function(){
                 return p2;
             }).then(function(v){
-                console.log(v);
-                
-                console.log("---- Dane po przesunięciu -----");    
-                console.log("fotki.clientWidth                  = " + fotki.clientWidth);
-                console.log("fotki.offsetLeft                   = " + fotki.offsetLeft);
-                console.log("fotki.clientWidth+fotki.offsetLeft = " + (fotki.clientWidth+fotki.offsetLeft));
 
-                console.log("---- Sprawdzam warunki PRAWO -----");
                 if((fotki.offsetLeft) >= warRight) {
                         arrowRight.src = "img/arrows/arrowNo.jpg";
                         arrowLeft.src = "img/arrows/arrowLeft.jpg";
@@ -209,7 +180,6 @@ function insertArrows() {
     for(var i=0; i<allImages.length; i++) {
         allImages[i].setAttribute("alt","pik"+(i+1));
         allImages[i].onclick = function(e) {
-            console.log("showImage");
             var src_pozycja = this.src.lastIndexOf("/")+1;
 
             //fadeOut | fadeIn
